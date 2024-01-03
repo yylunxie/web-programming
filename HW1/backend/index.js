@@ -82,3 +82,28 @@ const port = process.env.PORT || 8000;
 app.listen(port, () =>
   console.log(`Server running on port http://localhost:${port}`),
 );
+
+// Lecture practice
+
+
+app.post('/heartbeat', (req, res) => {
+  res.send('Received a POST HTTP method');
+});
+
+app.put('/heartbeat', (req, res) => {
+  res.send('Received a PUT HTTP method');
+});
+
+app.delete('/heartbeat', (req, res) => {
+  res.send('Received a DELETE HTTP method');
+});
+
+app.post('/heartbeat/users', (req, res) => {
+  res.send('POST HTTP method on users resource');
+});
+
+app.put('/heartbeat/users/:userId', (req, res) => {
+  res.send(
+    `PUT HTTP method on users/${req.params.userId} resource`,
+  );
+});
